@@ -1,0 +1,13 @@
+﻿
+@using DancingGoat.Models.FormComponents
+@using Kentico.Forms.Web.Mvc;
+
+@model CustomDropDownComponent
+
+@{
+    var htmlAttributes = ViewData.GetEditorHtmlAttributes();
+}
+
+@*@Html.DropDownListFor(x => x.SelectedValue, Model.Items, null, htmlAttributes)*@
+
+@Html.DropDownListFor(x => x.SelectedValue, Model.Items, "select site", htmlAttributes)

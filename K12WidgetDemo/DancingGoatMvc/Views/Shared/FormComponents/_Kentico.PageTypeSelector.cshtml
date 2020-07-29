@@ -1,0 +1,13 @@
+﻿
+@using DancingGoat.Models.FormComponents
+@using Kentico.Forms.Web.Mvc;
+
+@model FormComponentPageTypeSelector
+
+@{
+    var htmlAttributes = ViewData.GetEditorHtmlAttributes();
+}
+
+@Html.DropDownListFor(x => x.SelectPageTypes, Model.Items().Select(m=>new SelectListItem {Text=m.Text, Value=m.Value }), "select page type", htmlAttributes)
+
+@*@Html.DropDownListFor(model => model.ProjeTipId, ((List<string>)ViewBag.ProjeTipiList).Select(m => new SelectListItem { Text = m, Value = m }))*@

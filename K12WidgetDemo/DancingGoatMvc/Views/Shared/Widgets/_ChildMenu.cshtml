@@ -1,0 +1,18 @@
+﻿@model  DancingGoat.Models.Widgets.MegaMenu.MenuItemViewModel
+
+@if (Model.ChildMenu == null || Model.ChildMenu.Count == 0)
+{
+    <li><a href="@Model.RedirectionURL">@Model.NodeDisplayName</a></li>
+}
+else
+{
+    <li class="dropdown-submenu">
+        <a href="#">@Model.NodeDisplayName</a>
+        <ul class="dropdown-menu">
+            @foreach (var child in Model.ChildMenu)
+            {
+                Html.RenderPartial("Widgets/_ChildMenu", child);
+            }
+        </ul>
+    </li>
+}
